@@ -1,0 +1,114 @@
+:root {
+    --user-bg: #EAEAEA;
+    --message-bg: #D5F8BC;
+    --chat-input: #F3EEEA;
+    --notification-bg: #95DAFA;
+    --text-grey: #B1B1B1;
+}
+
+ul, ol, menu {
+    list-style: none;
+}
+
+img{
+    width: 45px;
+    border-radius: 20px;
+}
+
+.container{
+    max-width: 1900px;
+    height: 100vh;
+    margin: 0 auto;
+    border: 1px solid lightgray;
+}
+
+/* GENERAL */
+
+.grey_text{
+    color: var(--text-grey);
+}
+
+.last_login{
+    font-size: 0.9rem;
+}
+
+/* BACKGROUND */
+
+.received{
+    background-color: white;
+   
+}
+
+.sent{
+    background-color: var(--message-bg);
+}
+
+.profile_user{
+    background-color: var(--user-bg);
+}
+
+.main_chat{
+    background-image: url(../assets/mine.jpg);
+}
+
+.chat_input{
+    background-color: var(--chat-input);
+}
+
+.notifiche{
+    background-color: var(--notification-bg);
+}
+
+
+
+/************
+    ASIDE
+*************/
+
+/* Abilita notifiche */
+
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.circle i{
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    transform: translate(-50%, -50%);
+}
+
+/* Chat list */
+
+.contact:hover{
+    background-color: var(--user-bg);
+    cursor: pointer;
+}
+
+
+
+
+
+/************
+    MAIN
+*************/
+
+/* Chat syle */
+
+.chat_list {
+    margin-top: 45px;
+}
+
+.chat_list span{
+    margin-top: 35px;
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 70px;
+}
+
+.chat_size{
+    height: 100%;
+}
