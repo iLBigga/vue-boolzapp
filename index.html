@@ -61,7 +61,7 @@
                     <div class="border-top p-0">
                         <ul class="p-0">
                             <li v-for="(contact, i) in contacts" @click="selectContact(i)" class="d-flex justify-content-between p-3 contact">
-                                <div class="d-flex"> <!-- --------------------------------- FIX GENERAZIONE CHAT DEL PROPRIETARIO -->
+                                <div class="d-flex">
                                     <img :src="contact.avatar" alt="">
                                     <div class="row px-3">
                                         <span>{{contact.name}}</span>
@@ -91,7 +91,7 @@
                                 <img :src="contacts[active].avatar" alt="">
                                 <div class="row px-3">
                                     <span>{{contacts[active].name}}</span>
-                                    <span class="grey_text last_login lh-1 contact_time">Ultimo accesso oggi alle 12:00</span> <!-- ----------------------------- DA CONTROLLARE -->
+                                    <span class="grey_text last_login lh-1 contact_time">Ultimo accesso oggi alle 12:00</span> 
                                 </div>
                             </div>
                             <div class="d-flex gap-3 grey_text align-items-center">
