@@ -66,10 +66,10 @@
                                         <img :src="contact.avatar" alt="">
                                         <div class="row px-3">
                                             <span>{{contact.name}}</span>
-                                            <span class="grey_text last_login">Ultimo accesso...</span>
+                                            <span class="grey_text last_login"></span>
                                         </div>
                                     </div>
-                                    <span class="contact_time grey_text">12:00</span>
+                                    <span class="contact_time grey_text">{{getDate(contact.messages)}}</span>
                                 </li>
                             </template>
                         </ul>
@@ -93,7 +93,7 @@
                                 <img :src="contacts[active].avatar" alt="">
                                 <div class="row px-3">
                                     <span>{{contacts[active].name}}</span>
-                                    <span class="grey_text last_login lh-1 contact_time">Ultimo accesso oggi alle 12:00</span> 
+                                    <span class="grey_text last_login lh-1 contact_time">Ultimo accesso {{getDate(contacts[active].messages)}}</span> 
                                 </div>
                             </div>
                             <div class="d-flex gap-3 grey_text align-items-center">

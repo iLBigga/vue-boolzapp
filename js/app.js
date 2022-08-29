@@ -176,35 +176,25 @@ const app = new Vue({
         getMessages(){
             return this.contacts[this.active].messages;
         },
-        getDate(){
-            const received = [];
-            if(this.getMessages.stauts === 'received') {
-                this.received.push(this.getMessages.data);
-            };
-            return received;
-        },
+        
     },
     methods: {
         selectContact(indice){
             this.active = indice;
         },
         sendMessage(){
-            this.newMessage = 
-            {
+            this.getMessages.push({
                 message: this.newMessage,
                 status: 'sent',
-            };
-            this.getMessages.push(this.newMessage);
+            });
             this.newMessage = '';
             setTimeout(this.autoReply, 1000);
         },
         autoReply(){
-            const answer = 
-            {
+            this.getMessages.push({
                 message: 'Ok',
                 status: 'received',
-            };
-            this.getMessages.push(answer);
+            });
         },
         findContact(name){
             this.contacts.forEach(element => {
@@ -212,5 +202,12 @@ const app = new Vue({
                 userName.includes(name) ? element.visible = true : element.visible = false;
             });
         },
+
+        // DA SISTEMARE
+        getDate(el){
+            let lastDate 
+            lastDate = el[el.length -1].date
+            return lastDate
+        }
     },
 });
