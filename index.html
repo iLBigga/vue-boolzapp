@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
     <title>Boolzapp</title>
 </head>
 
@@ -106,10 +108,8 @@
 
                     <!-- MESSAGGI CHAT -->
 
-                    <div class="px-5 flex-grow-1">
-                        <ul class="chat_list">
-                            <li :class="el.status === 'sent' ? 'text-end' : ''" v-for="el in getMessages"><span :class="el.status">{{el.message}}</span></li>
-                        </ul>
+                    <div class="main_chat px-5 flex-grow-1">
+                        <div v-for="el in getMessages" :class="el.status">{{el.message}}<span class="message_date"></span></div>
                     </div>
 
                     <!-- CHAT INPUT -->

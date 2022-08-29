@@ -167,8 +167,6 @@ const app = new Vue({
     data: {
         contacts,
         active: 0,
-        received: 'received',
-        sent: 'sent text-end',
         newMessage: '',
         contactName: null,
     },
@@ -176,7 +174,6 @@ const app = new Vue({
         getMessages(){
             return this.contacts[this.active].messages;
         },
-        
     },
     methods: {
         selectContact(indice){
@@ -198,16 +195,15 @@ const app = new Vue({
         },
         findContact(name){
             this.contacts.forEach(element => {
-                let userName = element.name.toLowerCase()
+                let userName = element.name.toLowerCase();
                 userName.includes(name) ? element.visible = true : element.visible = false;
             });
         },
-
         // DA SISTEMARE
         getDate(el){
-            let lastDate 
-            lastDate = el[el.length -1].date
-            return lastDate
-        }
+            let lastDate;
+            lastDate = el[el.length -1].date;
+            return lastDate;
+        },
     },
 });

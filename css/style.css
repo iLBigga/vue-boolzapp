@@ -34,15 +34,6 @@ img{
 
 /* BACKGROUND */
 
-.received{
-    background-color: white;
-   
-}
-
-.sent{
-    background-color: var(--message-bg);
-}
-
 .profile_user{
     background-color: var(--user-bg);
 }
@@ -104,8 +95,14 @@ img{
 
 /* Chat syle */
 
-.chat_list {
-    margin-top: 45px;
+.main_chat{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.message_size{
+    width: 200px;
 }
 
 .chat_list span{
@@ -117,4 +114,23 @@ img{
 
 .chat_size{
     height: 100%;
+}
+
+.sent, .received{
+    width: 300px;
+    padding: 0.6rem;
+    border-radius: 1rem;
+}
+
+.received{
+    background-color: white;
+}
+
+.sent{
+    background-color: var(--message-bg);
+    align-self: flex-end;
+}
+
+.message_date{
+    font-size: 0.55rem;
 }
