@@ -83,12 +83,18 @@ img{
 
 /* Chat list */
 
+.contact{
+    border-top: 1px solid var(--chat-input);
+}
+
 .contact:hover{
     background-color: var(--user-bg);
     cursor: pointer;
 }
 
-
+.contact_time{
+    font-size: 0.82rem;
+}
 
 
 
@@ -104,8 +110,8 @@ img{
 
 .chat_list span{
     margin-top: 35px;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 20px;
     line-height: 70px;
 }
 

@@ -27,8 +27,8 @@
 
                     <div class="d-flex justify-content-between align-items-center user_menu profile_user p-3">
                         <div>
-                            <img src="./assets/avatar_1.jpg" alt="">
-                            <span class="px-2">Nome</span>
+                            <img src="./assets/avatar_io.jpg" alt="">
+                            <span class="px-2">Sofia</span>
                         </div>
                         <div class="d-flex gap-3 grey_text">
                             <i class="fa-regular fa-circle"></i>
@@ -36,7 +36,7 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-
+                    
                     <!-- RICHIESTA ATTIVAZIONE NOTIFICHE -->
 
                     <div class="d-flex p-3 notifiche">
@@ -61,14 +61,14 @@
                     <div class="border-top p-0">
                         <ul class="p-0">
                             <li v-for="(contact, i) in contacts" @click="selectContact(i)" class="d-flex justify-content-between p-3 contact">
-                                <div class="d-flex">
+                                <div class="d-flex"> <!-- --------------------------------- FIX GENERAZIONE CHAT DEL PROPRIETARIO -->
                                     <img :src="contact.avatar" alt="">
                                     <div class="row px-3">
                                         <span>{{contact.name}}</span>
-                                        <span class="grey_text last_login"></span>
+                                        <span class="grey_text last_login">Ultimo accesso...</span>
                                     </div>
                                 </div>
-                                <span>12:00</span>
+                                <span class="contact_time grey_text">12:00</span>
                             </li>
                         </ul>
                     </div>
@@ -88,10 +88,10 @@
                     <div class="border-start p-0">
                         <div class="d-flex justify-content-between user_menu profile_user p-3">
                             <div class="d-flex">
-                                <img src="./assets/avatar_1.jpg" alt="">
+                                <img :src="contacts[active].avatar" alt="">
                                 <div class="row px-3">
-                                    <span>Nome</span>
-                                    <span class="grey_text last_login lh-1">Nome</span>
+                                    <span>{{contacts[active].name}}</span>
+                                    <span class="grey_text last_login lh-1 contact_time">Ultimo accesso oggi alle 12:00</span> <!-- ----------------------------- DA CONTROLLARE -->
                                 </div>
                             </div>
                             <div class="d-flex gap-3 grey_text align-items-center">
@@ -114,7 +114,7 @@
 
                     <div class="d-flex justify-content-between chat_input align-items-center p-4">
                         <i class="fa-solid fa-face-smile px-4 grey_text"></i>
-                        <input class="flex-grow-1 border-0 lh-lg rounded-3" type="text" name="" id="">
+                        <input v-model="newMessage" @keyup.enter="sendMessage" class="flex-grow-1 border-0 lh-lg rounded-3" type="text" name="" id="">
                         <i class="fa-solid fa-microphone px-4 grey_text"></i>
                     </div>
                 </div>

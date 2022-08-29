@@ -169,15 +169,43 @@ const app = new Vue({
         active: 0,
         received: 'received',
         sent: 'sent text-end',
+        newMessage: '',
     },
     computed: {
         getMessages(){
             return this.contacts[this.active].messages;
+        },
+        getDate(){
+            const received = [];
+            if(this.getMessages.stauts === 'received') {
+                this.received.push(this.getMessages.data)
+            };
+            return received
         },
     },
     methods: {
         selectContact(indice){
             this.active = indice;
         },
+        sendMessage(){
+            this.newMessage = 
+            {
+                message: this.newMessage,
+                status: 'sent',
+            };
+            this.getMessages.push(this.newMessage)
+            this.newMessage = '';
+            setTimeout(this.autoReply, 1000)
+        },
+        autoReply(){
+            const answer = 
+            {
+                message: 'Ok',
+                status: 'received',
+            };
+            this.getMessages.push(answer);
+        },
     },
 });
+
+
