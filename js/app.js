@@ -170,6 +170,7 @@ const app = new Vue({
         received: 'received',
         sent: 'sent text-end',
         newMessage: '',
+        contactName: null,
     },
     computed: {
         getMessages(){
@@ -178,9 +179,9 @@ const app = new Vue({
         getDate(){
             const received = [];
             if(this.getMessages.stauts === 'received') {
-                this.received.push(this.getMessages.data)
+                this.received.push(this.getMessages.data);
             };
-            return received
+            return received;
         },
     },
     methods: {
@@ -193,9 +194,9 @@ const app = new Vue({
                 message: this.newMessage,
                 status: 'sent',
             };
-            this.getMessages.push(this.newMessage)
+            this.getMessages.push(this.newMessage);
             this.newMessage = '';
-            setTimeout(this.autoReply, 1000)
+            setTimeout(this.autoReply, 1000);
         },
         autoReply(){
             const answer = 
@@ -205,7 +206,11 @@ const app = new Vue({
             };
             this.getMessages.push(answer);
         },
+        findContact(name){
+            this.contacts.forEach(element => {
+                let userName = element.name.toLowerCase()
+                userName.includes(name) ? element.visible = true : element.visible = false;
+            });
+        },
     },
 });
-
-

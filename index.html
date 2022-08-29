@@ -52,7 +52,7 @@
                     <div class="input-group p-2">
                         <span class="input-group-text px-4 bg-white grey_text" id="basic-addon1"><i
                                 class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                        <input v-model="contactName" @keyup="findContact(contactName)" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                             aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
@@ -60,16 +60,18 @@
 
                     <div class="border-top p-0">
                         <ul class="p-0">
-                            <li v-for="(contact, i) in contacts" @click="selectContact(i)" class="d-flex justify-content-between p-3 contact">
-                                <div class="d-flex">
-                                    <img :src="contact.avatar" alt="">
-                                    <div class="row px-3">
-                                        <span>{{contact.name}}</span>
-                                        <span class="grey_text last_login">Ultimo accesso...</span>
+                            <template v-for="(contact, i) in contacts">
+                                <li v-if="contact.visible" @click="selectContact(i)" class="d-flex justify-content-between p-3 contact">
+                                    <div class="d-flex">
+                                        <img :src="contact.avatar" alt="">
+                                        <div class="row px-3">
+                                            <span>{{contact.name}}</span>
+                                            <span class="grey_text last_login">Ultimo accesso...</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <span class="contact_time grey_text">12:00</span>
-                            </li>
+                                    <span class="contact_time grey_text">12:00</span>
+                                </li>
+                            </template>
                         </ul>
                     </div>
                 </div>
