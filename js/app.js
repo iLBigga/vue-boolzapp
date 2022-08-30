@@ -17,7 +17,7 @@ contacts = [
                 status: 'sent'
             },
             {
-                date: '10/01/2020 16:35:00',
+                date: '10/01/2020 09:21:00',
                 message: 'Tutto fatto!',
                 status: 'received'
             }
@@ -39,7 +39,7 @@ contacts = [
                 status: 'received'
             },
             {
-                date: '20/03/2020 16:35:00',
+                date: '20/03/2020 11:03:00',
                 message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                 status: 'sent'
             }
@@ -78,7 +78,7 @@ contacts = [
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:50:00',
+                date: '10/01/2020 22:58:00',
                 message: 'Si, ma preferirei andare al cinema',
                 status: 'received'
             }
@@ -95,7 +95,7 @@ contacts = [
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:50:00',
+                date: '10/01/2020 17:48:00',
                 message: 'Va bene, stasera la sento',
                 status: 'received'
             }
@@ -117,7 +117,7 @@ contacts = [
                 status: 'received'
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: '10/01/2020 14:21:00',
                 message: 'Nessuna nuova, buona nuova',
                 status: 'sent'
             }
@@ -134,7 +134,7 @@ contacts = [
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:50:00',
+                date: '10/01/2020 19:47:00',
                 message: 'Grazie per avermelo ricordato, le scrivo subito!',
                 status: 'received'
             }
@@ -156,7 +156,7 @@ contacts = [
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: '10/01/2020 01:47:00',
                 message: 'OK!!',
                 status: 'received'
             }
