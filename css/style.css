@@ -4,6 +4,8 @@
     --chat-input: #F3EEEA;
     --notification-bg: #95DAFA;
     --text-grey: #B1B1B1;
+    --green-bar: #1E9587;
+    --body-bg: #D7DBD6;
 }
 
 ul, ol, menu {
@@ -19,14 +21,32 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     height: 100vh;
+    background-color: var(--body-bg);
+}
+
+#app{
+    position: absolute;
+}
+
+aside{
+    background-color: white;
+}
+
+.green_bar{
+    height: 100px;
+    background-color: var(--green-bar);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 .container{
     max-width: 1900px;
-    height: 95vh;
+    height: 90vh;
     margin: 0 auto;
-    border: 1px solid lightgray;
 }
 
 /* GENERAL */
