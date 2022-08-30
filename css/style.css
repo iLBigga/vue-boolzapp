@@ -15,9 +15,16 @@ img{
     border-radius: 20px;
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .container{
     max-width: 1900px;
-    height: 100vh;
+    height: 95vh;
     margin: 0 auto;
     border: 1px solid lightgray;
 }
@@ -28,9 +35,6 @@ img{
     color: var(--text-grey);
 }
 
-.last_login{
-    font-size: 0.9rem;
-}
 
 /* BACKGROUND */
 
@@ -87,6 +91,9 @@ img{
     font-size: 0.82rem;
 }
 
+.last_login{
+    font-size: 0.9rem;
+}
 
 
 /************
@@ -117,9 +124,10 @@ img{
 }
 
 .sent, .received{
-    width: 300px;
+    width: 400px;
     padding: 0.6rem;
     border-radius: 1rem;
+    position: relative;
 }
 
 .received{
@@ -132,5 +140,9 @@ img{
 }
 
 .message_date{
+    position: absolute;
     font-size: 0.55rem;
+    right: 0.8rem;
+    bottom: 0.4rem;
+    color: var(--text-grey);
 }

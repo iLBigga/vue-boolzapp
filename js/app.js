@@ -1,3 +1,5 @@
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+
 contacts = [
     {
         name: 'Michele',
@@ -15,7 +17,7 @@ contacts = [
                 status: 'sent'
             },
             {
-                date: '10/01/2020 16:15:22',
+                date: '10/01/2020 16:35:00',
                 message: 'Tutto fatto!',
                 status: 'received'
             }
@@ -162,13 +164,14 @@ contacts = [
     },
 ];
 
+
 const app = new Vue({
     el: '#app',
     data: {
         contacts,
         active: 0,
         newMessage: '',
-        contactName: null,
+        contactName: '',
     },
     computed: {
         getMessages(){
@@ -180,8 +183,11 @@ const app = new Vue({
             this.active = indice;
         },
         sendMessage(){
+            const clearSpace = this.newMessage.trim();
+            if(clearSpace === '') return;
             this.getMessages.push({
-                message: this.newMessage,
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                message: clearSpace,
                 status: 'sent',
             });
             this.newMessage = '';
@@ -189,6 +195,7 @@ const app = new Vue({
         },
         autoReply(){
             this.getMessages.push({
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 message: 'Ok',
                 status: 'received',
             });
@@ -199,11 +206,18 @@ const app = new Vue({
                 userName.includes(name) ? element.visible = true : element.visible = false;
             });
         },
-        // DA SISTEMARE
+        getLastMessage(el){
+            let lastMsg;
+            lastMsg = el[el.length - 1].message;
+            return lastMsg;
+        },
         getDate(el){
             let lastDate;
-            lastDate = el[el.length -1].date;
-            return lastDate;
+            lastDate = el[el.length -1].date;           
+            return dayjs(lastDate, 'DD/MM/YY hh:mm:ss')
         },
+        getHour(el){
+            return dayjs(el, 'DD/MM/YY hh:mm:ss').format('mm:ss');
+        }
     },
 });
